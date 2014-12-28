@@ -1,63 +1,12 @@
 <!DOCTYPE html>
 <head>
 	<title>HTML5 Canvas Test</title>
-	<style type="text/css"> body { background: #fff; }</style>
-	<script>
-		var ctx;
-		var radius;
-		var theCanvas;
-		window.onload = function() {
-			theCanvas = document.getElementById("myCanvasElement");
-			if (theCanvas) {
-				ctx = theCanvas.getContext("2d");
-				if (ctx) {
-					// Canvas code
-					radius = theCanvas.height / 2;
-					//ctx.translate(radius, radius);
-					radius = radius * 0.90;
-					drawClock();
-				}
-			}
-		};
-
-		function drawClock() {
-			drawFace();
-			
-		}
-
-		function drawFace() {
-			// var grad;
-			// ctx.beginPath();
-			// ctx.arc(0,0, radius, 0, 2*Math.PI);
-			// ctx.fillStyle = "#04ae6a";
-			// //ctx.fill();
-
-			// grad = ctx.createRadialGradient(0,0, radius*0.95, 0,0, radius*1.05);
-			// grad.addColorStop(0, '#333');
-			// grad.addColorStop(0.5, 'white');
-			// grad.addColorStop(1, '#333');
-			// ctx.strokeStyle = grad;
-			// ctx.lineWidth = radius*0.1;
-			// //ctx.stroke();
-			// ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
-  	// 		ctx.fillStyle = '#333';
-  			var x = theCanvas.width / 2;
-      		var y = theCanvas.height / 2;
-      		var startAngle = Math.PI;
-      		var endAngle = 2 * Math.PI;
-      		ctx.strokeStyle = "red";
-      		ctx.arc(x, y, 200, startAngle, endAngle, false);
-      		ctx.stroke();
-  			//ctx.fill();
-
-  			// this is a text for commit number 2
-		}
-	</script>
+	<style type="text/css"> body { background: #fff; margin: 0;}</style>
+	<script type="text/javascript" src="canvasjs.js"></script>
 </head>
 
-<body>
-	<canvas id="myCanvasElement" width="500" height="500" style="background-color: #333;">
+<body onresize="initCanvas()">
+	<canvas id="myCanvasElement" width=100% height=100% style="background-color: #333;">
 		Your browser doesn't support HTML5.
 	</canvas>
-</body>
 </body>
